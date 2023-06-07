@@ -6,8 +6,8 @@
       <class name="Tests.TestCases">
         <methods>
           <include name="browser"/>
-          <include name="StripeAction"/>
           <include name="CloseBrowser"/>
+          <include name="OTPVerification"/>
         </methods>
       </class> <!-- Tests.TestCases -->
     </classes>

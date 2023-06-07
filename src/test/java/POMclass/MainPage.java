@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class MainPage {
 	
@@ -16,6 +17,17 @@ public class MainPage {
 			}
 	@FindBy(xpath="//a[text()='Login']")
 	 private WebElement login;
+	
+	
+	public void verifyMainpageTitle()
+	{
+		String actual=driver.getTitle();
+		System.out.println(actual);
+		String expected="SuperLink";
+		Assert.assertEquals(expected, actual,"Title is not correct");
+		
+	    
+	}
 	
 	
 

@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class OTPVrificationPage {
 	WebDriver driver;
@@ -39,5 +40,17 @@ public class OTPVrificationPage {
 		robot.keyRelease(KeyEvent.VK_V);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
 
+	}
+	
+	@FindBy(xpath="//h5[text()='Profile']")
+		 private WebElement prof;
+	public void verifyAcceptedOTP()
+	{
+		String actual=prof.getText();
+		System.out.println(actual);
+		String expected="PROFILE";
+		Assert.assertEquals(expected, actual,"profile is not match");
+		
+	    
 	}
 }

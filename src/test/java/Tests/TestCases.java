@@ -37,6 +37,7 @@ public class TestCases {
 		Mp=new MainPage(driver);
 		Mp.loginClick();
 		Mp.letsStartClick();
+		Mp.verifyMainpageTitle();
 		
 	}
 	@Test(priority=1)
@@ -45,12 +46,14 @@ public class TestCases {
 		Thread.sleep(4000);
 		lp.EnterloginNo("4444444444");
 		lp.ContinueClick();
+		lp.SuccMsg();
 	}
 	@Test(priority=2)
 	public void OTPVerification() throws AWTException, InterruptedException {
 		otp=new OTPVrificationPage(driver);
 		otp.EnterOTP();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+		otp.verifyAcceptedOTP();
 	}
 	
 	@Test(priority=3)
